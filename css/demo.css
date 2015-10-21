@@ -1,0 +1,209 @@
+/* General Blueprint Style */
+
+@font-face {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/bpicons/bpicons.eot');
+	src: url('../fonts/bpicons/bpicons.eot?#iefix') format('embedded-opentype'), url('../fonts/bpicons/bpicons.woff') format('woff'), url('../fonts/bpicons/bpicons.ttf') format('truetype'), url('../fonts/bpicons/bpicons.svg#bpicons') format('svg');
+}
+
+
+/* Made with http://icomoon.io/ */
+
+
+/* Resets */
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+
+/* Helper classes */
+
+.cf:before,
+.cf:after {
+	content: ' ';
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+
+/* Main styles */
+
+body {
+	font-family: 'Avenir Next', Avenir, 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+	margin: 0;
+	color: #cecece;
+	background: #1d1e21;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	text-decoration: none;
+	color: #5c5edc;
+	outline: none;
+}
+
+a:hover {
+	color: #fff;
+}
+
+
+/* Blueprint header */
+
+.bp-header {
+	padding: 6em 10vw 2em;
+}
+
+.bp-header__title {
+	font-size: 2.125em;
+	font-weight: 700;
+	line-height: 1.3;
+	margin: 0;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.bp-header__desc {
+	font-size: 0.95em;
+	margin: 0.5em 0 1em;
+	padding: 0;
+}
+
+.bp-header__present {
+	font-size: 0.85em;
+	font-weight: 700;
+	position: relative;
+	z-index: 100;
+	display: block;
+	padding: 0 0 0.6em 0.1em;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	color: #5c5edc;
+}
+
+.bp-tooltip:after {
+	font-size: 50%;
+	font-size: 75%;
+	position: relative;
+	top: -8px;
+	left: -12px;
+	width: 30px;
+	height: 30px;
+}
+
+.bp-tooltip:hover:before {
+	content: attr(data-content);
+	font-size: 110%;
+	font-weight: 700;
+	line-height: 1.2;
+	position: absolute;
+	left: auto;
+	margin-left: 4px;
+	padding: 0.8em 1em;
+	text-align: left;
+	text-indent: 0;
+	letter-spacing: 0;
+	text-transform: none;
+	color: #fff;
+	background: #5c5edc;
+}
+
+.bp-nav {
+	margin: 0 0 0 -0.75em;
+}
+
+.bp-nav__item {
+	position: relative;
+	display: inline-block;
+	width: 2.5em;
+	height: 2.5em;
+	margin: 0 0.1em;
+	text-align: left;
+	border-radius: 50%;
+}
+
+.bp-nav__item > span {
+	display: none;
+}
+
+.bp-nav__item:hover:before {
+	content: attr(data-info);
+	font-size: 0.85em;
+	font-weight: bold;
+	position: absolute;
+	top: 120%;
+	left: 0;
+	width: 600%;
+	text-align: left;
+	pointer-events: none;
+	color: #595a5f;
+}
+
+.bp-nav__item:hover {
+	background: #5c5edc;
+}
+
+.bp-icon:after {
+	font-family: 'bpicons';
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	text-align: center;
+	text-transform: none;
+	color: #5c5edc;
+	-webkit-font-smoothing: antialiased;
+
+	speak: none;
+}
+
+.bp-nav .bp-icon:after {
+	line-height: 2.4;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-indent: 0;
+}
+
+.bp-nav a:hover:after {
+	color: #fff;
+}
+
+.bp-icon--next:after {
+	content: '\e000';
+}
+
+.bp-icon--drop:after {
+	content: '\e001';
+}
+
+.bp-icon--archive:after {
+	content: '\e002';
+}
+
+.bp-icon--about:after {
+	content: '\e003';
+}
+
+.bp-icon--prev:after {
+	content: '\e004';
+}
+
+@media screen and (max-width: 40em) {
+	.bp-header {
+		padding: 50px 20px 1em;
+	}
+	.bp-header__title {
+		font-size: 1.8em;
+	}
+}
