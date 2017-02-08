@@ -217,5 +217,26 @@
 	}
 
 	init();
+	
+	//changes to a page such as id="page-manuals" without opening the menu and preserving menu transition functionality
+	window.openPageNoTransition = function(id){
 
+		var futurePage = id ? document.getElementById(id) : pages[current],
+			futureCurrent = pages.indexOf(futurePage),
+			stackPagesIdxs = getStackPagesIdxs(futureCurrent);
+
+		// set transforms for the new current page
+		futurePage.style.WebkitTransform = 'translate3d(0, 0, 0)';
+		futurePage.style.transform = 'translate3d(0, 0, 0)';
+		futurePage.style.opacity = 1;
+
+		classie.remove(futurePage, 'page--inactive');
+
+		// set current
+		if( id ) {
+			current = futureCurrent;
+		}
+
+		buildStack();
+	}
 })(window);
